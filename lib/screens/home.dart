@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:untitled4/domain/list.dart';
 import 'package:untitled4/services/auth.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage ({Key? key}) :super (key: key);
 
+
+
   @override
   Widget build(BuildContext context) {
-    return Container(
+        return Container(
       child: Scaffold(
-        backgroundColor: Theme.of(context).primaryColor,
+    backgroundColor: Theme.of(context).primaryColor,
         appBar: AppBar(
+          backgroundColor: Color.fromRGBO(28, 84, 56, 1), //верхушка
           title: Text('Home Service'),
           leading: Icon(Icons.account_balance),
           actions: <Widget>[
@@ -47,7 +51,7 @@ class WorkoutList extends StatelessWidget{
                 elevation: 2.0,
                 margin: EdgeInsets.symmetric(horizontal: 8,vertical: 4),
                 child: Container(
-                  decoration: BoxDecoration(color: Colors.white),
+                  decoration: BoxDecoration(color: Colors.lightBlueAccent),
                   child: ListTile(
                       title: Text(workouts[i].title)
                   ),
@@ -59,5 +63,4 @@ class WorkoutList extends StatelessWidget{
     );
   }
 }
-
 

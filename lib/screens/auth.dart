@@ -140,6 +140,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
       }
     }
 
+
     void _registerButtonAction() async {
       _email = _emailController.text;
       _password = _passwordController.text;

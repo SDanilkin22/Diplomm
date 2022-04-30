@@ -9,4 +9,3 @@ class AuthUser {
   }
 }
 
-///void main() => runApp(MyApp());
