@@ -5,6 +5,5 @@ class Workout {
   String level;
 
   Workout(
-      {required this.title, required this.author, required this.description, required this.level});
-
+      {required this.title, required this.author, required this.description, required this.level}){}
 }

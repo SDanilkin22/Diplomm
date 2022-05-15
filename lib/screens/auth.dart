@@ -21,7 +21,6 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
 
   AuthService _authService = AuthService();
 
-
   @override //заголовок
   Widget build(BuildContext context) {
     Widget _logo() {
@@ -121,9 +120,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
       AuthUser? user;
       user = await _authService.signInWithEmailAndPassword(
           _email.trim(), _password.trim());
-      if (user == null)
-      {
-
+      if (user == null) {
         Fluttertoast.showToast(
             msg: "Не удается войти в систему! Проверьте свой логин/пароль",
             toastLength: Toast.LENGTH_SHORT,
@@ -131,15 +128,12 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
             timeInSecForIosWeb: 2,
             backgroundColor: Colors.red,
             textColor: Colors.white,
-            fontSize: 16.0
-        );
-
+            fontSize: 16.0);
       } else {
         _emailController.clear();
         _passwordController.clear();
       }
     }
-
 
     void _registerButtonAction() async {
       _email = _emailController.text;
@@ -150,9 +144,7 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
       AuthUser? user;
       user = await _authService.registerWithEmailAndPassword(
           _email.trim(), _password.trim());
-      if (user == null)
-      {
-
+      if (user == null) {
         Fluttertoast.showToast(
             msg: "Не удалось зарегистрироваться! Проверьте свой логин/пароль",
             toastLength: Toast.LENGTH_SHORT,
@@ -160,15 +152,12 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
             timeInSecForIosWeb: 2,
             backgroundColor: Colors.red,
             textColor: Colors.white,
-            fontSize: 16.0
-        );
-
+            fontSize: 16.0);
       } else {
         _emailController.clear();
         _passwordController.clear();
       }
     }
-
 
     Widget _bottomWave() {
       return Expanded(
@@ -185,8 +174,6 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
       );
     }
 
-
-
     return Scaffold(
         //класс для создания отдельной страницы
         backgroundColor: Color.fromRGBO(00, 38, 46, 1),
@@ -194,9 +181,10 @@ class _AuthorizationPageState extends State<AuthorizationPage> {
           // колонка
           children: <Widget>[
             _logo(), //лого
-            SizedBox(height: 50,),
-            (
-                showLogin
+            SizedBox(
+              height: 50,
+            ),
+            (showLogin
                 ? Column(
                     children: <Widget>[
                       _form('ВХОД', _loginButtonAction),
@@ -254,4 +242,3 @@ class BottomWaveClipper extends CustomClipper<Path> {
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }
-

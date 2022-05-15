@@ -16,23 +16,22 @@ void main() async {
   runApp(MyApp());
 }
 
-
-class MyApp extends StatelessWidget { //виджет без состояния
+class MyApp extends StatelessWidget {
+  //виджет без состояния
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) { //context определяет место в иерархии виджета
+  Widget build(BuildContext context) {
+    //context определяет место в иерархии виджета
     return StreamProvider<AuthUser?>.value(
       value: AuthService().currentUser,
-    initialData: null,
-    child: MaterialApp(
-        title: 'Home Service', //название приложения
-        theme: ThemeData( //глобальная тема
-        primaryColor: Color.fromRGBO(28, 84, 56, 1),  //основной цвет
-     textTheme: TextTheme(titleSmall: TextStyle(color:Colors.white))
-      ),
-      home: LandingPage()
-    ),
+      initialData: null,
+      child: MaterialApp(
+          title: 'Home Service', //название приложения
+          theme: ThemeData(
+              //глобальная тема
+              primaryColor: Color.fromRGBO(28, 84, 56, 1), //основной цвет
+              textTheme: TextTheme(titleSmall: TextStyle(color: Colors.white))),
+          home: LandingPage()),
     );
   }
-  }
-
+}
